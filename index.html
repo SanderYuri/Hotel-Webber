@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Webber</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+ 
+        function calcularValor() {
+            const tipoQuarto = document.getElementById('tipoQuarto').value;
+            const numeroPessoas = document.getElementById('pessoas').value;
+            let valor = 0;
+
+
+            switch(tipoQuarto) {
+                case 'executivo':
+                    valor = 200;
+                    break;
+                case 'superior':
+                    valor = 350;
+                    break;
+                case 'elite':
+                    valor = 500;
+                    break;
+                case 'luxo':
+                    valor = 900;
+                    break;
+            }
+
+
+            const valorTotal = valor * numeroPessoas;
+            document.getElementById('valores').value = valorTotal;
+        }
+        
+
+        window.onload = () => {
+            document.getElementById('tipoQuarto').addEventListener('change', calcularValor);
+            document.getElementById('pessoas').addEventListener('input', calcularValor);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Hotel Webber</h1>
+        <nav>
+            <ul>
+                <li><a href="#quartos">Quartos</a></li>
+                <li><a href="#reservas">Reservas</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Bem-vindo ao Hotel Webber</h2>
+        <p>Com localização privilegiada, o seu conforto é nossa prioridade! Aguardamos você e sua família.</p>
+    </section>
+
+    <section id="quartos" class="quartos">
+        <h2>Quartos</h2>
+        <div class="quartos-container">
+
+        </div>
+    </section>
+    
+    <section id="reservas">
+        <h2>Faça sua Reserva</h2>
+        <form id="reservaForm" action="HotelReserva.php" method="POST">
+            <label for="data">Data da Reserva:</label>
+            <input type="date" id="data" name="data" required>
+        
+            <label for="tipoQuarto">Tipo de Quarto:</label>
+            <select id="tipoQuarto" name="tipoQuarto" required>
+                <option value="executivo">Quarto Executivo</option>
+                <option value="superior">Quarto Superior</option>
+                <option value="elite">Quarto Elite</option>
+                <option value="luxo">Quarto Luxo</option>
+            </select>
+        
+            <label for="pessoas">Número de Pessoas:</label>
+            <input type="number" id="pessoas" name="pessoas" min="1" max="4" required>
+        
+            <label for="valores">Valor Total:</label>
+            <input type="text" id="valores" name="valores" readonly>
+        
+            <button type="submit">Reservar</button>
+        </form>
+    </section>
+ 
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="contactForm" action="HotelContato.php" method="POST">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        
+    </section>
+    
+    <section id="newsletter">
+        <h2>Inscreva-se para nossa Newsletter</h2>
+        <p>Fique por dentro das últimas novidades e promoções do Hotel Webber!</p>
+        <form id="newsletterForm" action="newsletter.php" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+            
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+            
+            <button type="submit">Inscrever-se</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Hotel Webber. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,357 @@
+/* Reset de estilo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    
+}
+h2 {
+    color: #333;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+h2+p {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Efeito dourado ao passar o mouse */
+}
+
+/* Seção Hero */
+.hero {
+    background-image: url('https://www.yourhotelimageurl.com');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h2 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Seção Quartos */
+.quartos {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.quartos h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Container dos Quartos com Grid */
+.quartos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cria uma grade com colunas flexíveis */
+    gap: 20px;
+    justify-items: center; /* Alinha os itens horizontalmente no centro */
+    padding: 0 10px;
+    max-width: 1200px; /* Limita a largura máxima da grade */
+    margin: 0 auto; /* Centraliza a grade horizontalmente */
+}
+
+/* Estilo de cada Quarto */
+.quarto {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.quarto:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.quarto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ajusta as imagens mantendo a proporção */
+}
+
+.quarto h3 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.quarto p {
+    padding: 15px;
+    color: #555;
+}
+
+/* Seção Sobre Nós */
+.sobre {
+    padding: 60px 20px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.sobre h4 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    font-size: 1.2em;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Seção Contato */
+#contato {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+#contato h2 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#contactForm {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#contactForm label {
+    font-size: 1.2em;
+    color: #333;
+}
+
+#contactForm input,
+#contactForm textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #FFD700;
+    outline: none;
+}
+
+#contactForm button {
+    background-color: #333;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+#contactForm button:hover {
+    background-color: #555;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Ajustes de Responsividade */
+@media (max-width: 768px) {
+    .carrossel-container {
+        flex-direction: column;
+    }
+    .carrossel-slide {
+        max-width: 100%;
+    }
+
+    /* Ajustes para a grade de quartos */
+    .quartos-container {
+        grid-template-columns: 1fr 1fr; /* Exibe 2 colunas em telas pequenas */
+    }
+}
+/* Seção Reservas */
+#reservas {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#reservas h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#reservaForm {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#reservaForm label {
+    font-size: 1.2em;
+    color: #333;
+}
+
+#reservaForm input,
+#reservaForm select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+#reservaForm input:focus,
+#reservaForm select:focus {
+    border-color: #FFD700;
+    outline: none;
+}
+
+#reservaForm button {
+    background-color: #333;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+#reservaForm button:hover {
+    background-color: #555;
+}
+#newsletter {
+    background-color: #f8f8f8;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+#newsletter h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+#newsletter p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#newsletter label {
+    font-size: 1em;
+    color: #333;
+}
+
+#newsletter input {
+    padding: 10px;
+    width: 300px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#newsletter button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#newsletter button:hover {
+    background-color: #005f72;
+}
